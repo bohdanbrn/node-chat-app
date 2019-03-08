@@ -12,7 +12,8 @@ const locationMessageTemplate = document.querySelector('#location-message-templa
 
 socket.on('message', (message) => {
     const html = Mustache.render(messageTemplate, {
-        message
+        message: message.text,
+        createdAt: moment(message.createdAt).format('DD.MMMM HH:mm')
     })
     $messages.insertAdjacentHTML('beforeend', html)
 })
