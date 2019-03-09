@@ -27,7 +27,7 @@ const addUser = ({id, username, room}) => {
     // Store user
     const user = {id, username, room}
     users.push(user)
-
+    return {user}
 }
 
 const removeUser = (id) => {
@@ -43,11 +43,11 @@ const getUser = (id) => {
 }
 
 const getUsersInRoom = (room) => {
-    room = room.trim().toLowerCase();
+    room = room.trim().toLowerCase()
     return users.filter((user) => user.room === room)
 }
 
-module.exposts = {
+module.exports = {
     addUser,
     removeUser,
     getUser,
