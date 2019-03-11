@@ -1,5 +1,8 @@
 const users = []
 
+/**
+ * Add new user to array
+ */
 const addUser = ({id, username, room}) => {
     // Clean the data
     username = username.trim().toLowerCase()
@@ -30,6 +33,9 @@ const addUser = ({id, username, room}) => {
     return {user}
 }
 
+/**
+ * Remove user from array by id
+ */
 const removeUser = (id) => {
     const index = users.findIndex((user) => user.id === id)
 
@@ -38,10 +44,16 @@ const removeUser = (id) => {
     }
 }
 
+/**
+ * Get users by id
+ */
 const getUser = (id) => {
     return users.find((user) => user.id === id)
 }
 
+/**
+ * Get users in needed room
+ */
 const getUsersInRoom = (room) => {
     room = room.trim().toLowerCase()
     return users.filter((user) => user.room === room)
